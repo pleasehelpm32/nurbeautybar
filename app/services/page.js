@@ -1,9 +1,10 @@
 // app/services/page.jsx
 "use client";
 import { useState } from "react";
-import FilterButtons from "@/components/FilterButtons";
-import ServiceGrid from "@/components/ServiceGrid";
-import ServiceCard from "@/components/ServiceCard";
+import CategoryTabs from "@/components/CategoryTabs";
+import ServiceTabs from "@/components/ServiceTabs";
+import ServiceDisplay from "@/components/ServiceDisplay";
+
 const services = [
   {
     id: 1,
@@ -69,7 +70,7 @@ const services = [
   {
     id: 5,
     category: "extensions",
-    title: "Brown Colured Full Set",
+    title: "Brown Coloured Full Set",
     price: 155,
     duration: "3 hours",
     description:
@@ -263,43 +264,52 @@ const services = [
     images: ["/extensions/wet/wetlash1.png"],
   },
 ];
-
 export default function ServicesPage() {
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [isLoading, setIsLoading] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("extensions");
+  const [activeService, setActiveService] = useState(services[0]);
 
   const handleCategoryChange = (category) => {
-    setIsLoading(true);
-    setActiveCategory(category);
-    // Simulate a small loading delay for smooth transitions
-    setTimeout(() => setIsLoading(false), 300);
+    setActiveCategory(category.toLowerCase());
+    const firstServiceInCategory = services.find(
+      (service) => service.category === category.toLowerCase()
+    );
+    setActiveService(firstServiceInCategory);
   };
 
+  const filteredServices = services.filter(
+    (service) => service.category === activeCategory
+  );
+
   return (
-    <main className="bg-cream min-h-screen py-16 px-4">
-      <div className="container mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-dark text-center mb-8">
+    <main className="bg-cream min-h-screen py-8 md:py-16">
+      <div className="container mx-auto max-w-7xl px-4 md:px-8">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark text-center mb-8 md:mb-12">
           Our Services
         </h1>
 
-        <FilterButtons
+        <CategoryTabs
           activeCategory={activeCategory}
-          onChange={handleCategoryChange}
+          onCategoryChange={handleCategoryChange}
         />
 
-        {isLoading ? (
-          <div className="flex justify-center items-center min-h-[200px]">
-            <div className="w-12 h-12 rounded-full border-4 border-mid border-t-transparent animate-spin" />
+        <div className="mt-8 md:mt-12 relative">
+          {/* Content wrapper */}
+          <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
+            {/* Service tabs - absolute positioned on desktop */}
+            <div className="lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:w-64">
+              <ServiceTabs
+                services={filteredServices}
+                activeService={activeService}
+                onServiceChange={setActiveService}
+              />
+            </div>
+
+            {/* Main content area with proper offset */}
+            <div className="lg:ml-72 flex-1">
+              {activeService && <ServiceDisplay service={activeService} />}
+            </div>
           </div>
-        ) : (
-          <ServiceGrid
-            services={services.filter((service) =>
-              activeCategory === "all"
-                ? true
-                : service.category === activeCategory
-            )}
-          />
-        )}
+        </div>
       </div>
     </main>
   );
