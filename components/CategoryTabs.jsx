@@ -12,7 +12,7 @@ export default function CategoryTabs({ activeCategory, onCategoryChange }) {
           key={category}
           onClick={() => onCategoryChange(category)}
           className={`
-            px-4 md:px-8 py-2 md:py-3 rounded-full text-base md:text-xl font-medium 
+            px-4 md:px-8 py-2 md:py-3 rounded-md text-base md:text-xl font-medium 
             transition-all duration-300 shadow-md hover:shadow-lg
             ${
               activeCategory === category.toLowerCase()

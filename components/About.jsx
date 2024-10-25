@@ -49,7 +49,7 @@ const AboutSection = () => {
               out everyone's inner Light ensuring our clients look and feel
               their best when leaving our doors.
             </p>
-            <Button className="bg-mid hover:bg-dark text-light text-lg py-4 px-10 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+            <Button className="bg-mid hover:bg-dark text-light text-lg py-6 px-8 rounded-md transition duration-300 ease-in-out transform hover:scale-105">
               Get in Touch
             </Button>
           </div>

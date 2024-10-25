@@ -1,6 +1,9 @@
 // app/services/page.jsx
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import CategoryTabs from "@/components/CategoryTabs";
 import ServiceTabs from "@/components/ServiceTabs";
 import ServiceDisplay from "@/components/ServiceDisplay";
@@ -265,6 +268,7 @@ const services = [
   },
 ];
 export default function ServicesPage() {
+  const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("extensions");
   const [activeService, setActiveService] = useState(services[0]);
 
@@ -306,7 +310,40 @@ export default function ServicesPage() {
 
             {/* Main content area with proper offset */}
             <div className="lg:ml-72 flex-1">
-              {activeService && <ServiceDisplay service={activeService} />}
+              <div className="flex flex-col">
+                {activeService && <ServiceDisplay service={activeService} />}
+
+                {/* Book Now Button */}
+                <div className="mt-8 md:mt-12 flex justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -4 }}
+                    whileTap={{ scale: 0.98 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 20,
+                    }}
+                  >
+                    <Button
+                      onClick={() => router.push("/bookings")}
+                      className="
+                        bg-dark hover:bg-dark/90 text-light
+                        px-10 py-8 md:px-10 
+                        text-xl md:text-2xl
+                        rounded-md
+                        shadow-lg
+                        border-2 border-dark/10
+                        font-semibold
+                        transition-colors duration-300
+                      "
+                    >
+                      Book Now
+                    </Button>
+                  </motion.div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

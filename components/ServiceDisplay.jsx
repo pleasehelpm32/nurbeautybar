@@ -6,7 +6,7 @@ export default function ServiceDisplay({ service }) {
   return (
     <div className="bg-white rounded-xl md:rounded-3xl overflow-hidden shadow-lg border-2 border-dark/10">
       <div className="p-4 md:p-8">
-        <div className="w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[800px] rounded-lg overflow-hidden bg-creamy">
+        <div className="w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[700px] rounded-lg overflow-hidden bg-creamy">
           <ImageSlider images={images} />
         </div>
 

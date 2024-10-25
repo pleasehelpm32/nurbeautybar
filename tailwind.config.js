@@ -15,6 +15,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter Variable", "system-ui", "sans-serif"],
+        serif: ["Playfair Display Variable", "serif"],
+      },
       colors: {
         dark: "#AD958D",
         mid: "#CDA596",

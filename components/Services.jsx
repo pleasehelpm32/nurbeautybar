@@ -136,8 +136,8 @@ const Services = () => {
               className="
                 bg-mid hover:bg-dark text-light 
                 text-xl md:text-2xl 
-                py-6 px-16 md:px-20
-                rounded-full 
+                py-8 px-14 md:px-20
+                rounded-md 
                 transition-all duration-300 
                 hover:scale-105 
                 font-medium

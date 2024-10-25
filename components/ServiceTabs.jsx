@@ -20,7 +20,7 @@ export default function ServiceTabs({
               px-4 py-2
               whitespace-nowrap
               transition-colors duration-200
-              rounded-full
+              rounded-md
               ${
                 activeService.id === service.id
                   ? "bg-dark text-light"
@@ -57,7 +57,7 @@ export default function ServiceTabs({
               font-medium text-lg
               shadow-md
               mb-3
-              rounded-lg
+              rounded-md
             `}
           >
             {serviceNameMapping[service.title] || service.title}

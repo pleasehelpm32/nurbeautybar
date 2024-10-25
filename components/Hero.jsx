@@ -30,7 +30,7 @@ const Hero = () => {
           Premium Eyelash Extensions for a Stunning Look
         </p>
         <Link href="/bookings">
-          <Button className="bg-mid hover:bg-dark text-light text-xl sm:text-2xl py-4 px-10 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+          <Button className="bg-mid hover:bg-dark text-light text-xl sm:text-2xl py-8 px-10 rounded-md transition duration-300 ease-in-out transform hover:scale-105">
             Book Now
           </Button>
         </Link>
