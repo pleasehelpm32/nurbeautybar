@@ -46,7 +46,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-cream min-h-screen py-16 px-4">
+    <main className="bg-creamy min-h-screen py-16 px-4">
       <div className="container mx-auto max-w-7xl">
         <motion.h1
           className="text-4xl md:text-5xl font-bold text-dark text-center mb-16"

@@ -300,7 +300,7 @@ export default function ServicesPage() {
   );
 
   return (
-    <main className="bg-cream min-h-screen py-8 md:py-16">
+    <main className="bg-creamy min-h-screen py-8 md:py-16">
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark text-center mb-8 md:mb-12">
           Our Services

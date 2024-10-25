@@ -85,7 +85,7 @@ const Services = () => {
   }, [api]);
 
   return (
-    <section className="py-24 bg-cream">
+    <section className="py-24 bg-creamy">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl font-bold text-center text-dark mb-16">
           OUR SERVICES

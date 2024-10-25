@@ -1,7 +1,7 @@
 // app/policies/page.jsx
 export default function PoliciesPage() {
   return (
-    <main className="bg-cream min-h-screen py-16 px-4">
+    <main className="bg-creamy min-h-screen py-16 px-4">
       <div className="container mx-auto max-w-5xl space-y-12">
         {/* Booking Policy Card */}
         <div className="bg-white rounded-3xl shadow-lg border-2 border-dark/10 p-6 md:p-12">
