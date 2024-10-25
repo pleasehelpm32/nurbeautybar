@@ -40,7 +40,7 @@ const Hero = () => {
           Elevate Your Beauty
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl text-cream mb-8">
-          Premium Eyelash Extensions for a Stunning Look
+          Luxury lash extensions tailored to you
         </p>
         <Link href="/bookings" onClick={handleBookClick}>
           <Button className="bg-mid hover:bg-dark text-light text-xl sm:text-2xl py-8 px-10 rounded-md transition duration-300 ease-in-out transform hover:scale-105">

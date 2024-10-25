@@ -45,7 +45,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-mid hover:text-dark px-5 py-3 rounded-md 
+                className="text-dark hover:text-mid px-5 py-3 rounded-md 
                   text-3xl lg:text-4xl tracking-wide font-medium  /* Significantly increased text size */
                   transition-all duration-200 hover:scale-105"
               >

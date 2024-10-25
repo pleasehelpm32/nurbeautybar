@@ -57,7 +57,7 @@ const TruncatedDescription = ({ text }) => {
   return (
     <div>
       <p
-        className={`mt-2 text-sm md:text-base text-mid ${
+        className={`mt-2 text-sm md:text-base text-olddark ${
           !isExpanded ? "line-clamp-3" : ""
         }`}
       >

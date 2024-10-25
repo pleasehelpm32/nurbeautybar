@@ -40,7 +40,7 @@ const AboutSection = () => {
             <h3 className="text-4xl font-semibold text-dark mb-8">
               Uncover your inner glow
             </h3>
-            <p className="text-lg leading-relaxed text-mid mb-10 max-w-2xl">
+            <p className="text-lg leading-relaxed text-olddark mb-10 max-w-2xl">
               Nurbeautybar's core foundation is placed on the belief that
               everyone has a light within them in their own unique way. Nur,
               meaning light in Arabic, is used to call to mind a sense of
