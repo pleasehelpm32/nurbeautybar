@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import CategoryTabs from "@/components/CategoryTabs";
 import ServiceTabs from "@/components/ServiceTabs";
 import ServiceDisplay from "@/components/ServiceDisplay";
+import { event } from "@next/third-parties/google";
 
 const services = [
   {
@@ -271,6 +272,20 @@ export default function ServicesPage() {
   const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("extensions");
   const [activeService, setActiveService] = useState(services[0]);
+  const handleBookClick = () => {
+    event("button_click", {
+      category: "booking",
+      label: "services_book_now",
+      // Track additional context about what the user was viewing
+      service_category: activeCategory,
+      service_name: activeService.title,
+      service_price: activeService.price,
+      value: activeService.price, // Optional: tracking the price as a value
+      custom_parameter: "services_page",
+    });
+
+    router.push("/bookings");
+  };
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category.toLowerCase());
@@ -327,7 +342,7 @@ export default function ServicesPage() {
                     }}
                   >
                     <Button
-                      onClick={() => router.push("/bookings")}
+                      onClick={handleBookClick}
                       className="
                         bg-dark hover:bg-dark/90 text-light
                         px-10 py-8 md:px-10 

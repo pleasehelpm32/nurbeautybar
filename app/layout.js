@@ -5,6 +5,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import "swiper/css";
 import "swiper/css/effect-cards";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import CookieConsent from "@/components/CookieConsent";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Nur Beauty Bar",
@@ -44,6 +47,9 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <Navbar />
         {children}
+        <GoogleAnalytics gaId="G-TZWJMQZBJ0" />
+        <CookieConsent />
+        <Footer />
       </body>
     </html>
   );
