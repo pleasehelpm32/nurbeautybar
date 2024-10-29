@@ -42,7 +42,7 @@ export default function ContactPage() {
   };
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:nurbeautybar@hotmail.com";
+    window.location.href = "mailto:nurbeautybar@gmail.com";
   };
 
   return (
@@ -178,7 +178,7 @@ export default function ContactPage() {
                         Email
                       </h3>
                       <p className="text-xl text-dark">
-                        nurbeautybar@hotmail.com
+                        nurbeautybar@gmail.com
                       </p>
                     </div>
                   </div>

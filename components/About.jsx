@@ -18,7 +18,7 @@ const AboutSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-16 max-w-7xl mx-auto">
           {/* Image container */}
           <div className="lg:w-1/2 relative">
-            <div className="w-80 h-[32rem] mx-auto relative overflow-hidden rounded-[3rem] border-8 border-white shadow-2xl">
+            <div className="w-80 h-[32rem] mx-auto relative overflow-hidden  border-4 border-white ">
               <Image
                 src={About}
                 alt="Nurbeautybar founder"

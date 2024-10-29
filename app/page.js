@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import AboutSection from "@/components/About";
 import TestimonialSection from "@/components/Testimonials";
+import Instagram from "@/components/Instagram";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <AboutSection />
       <TestimonialSection />
+      <Instagram />
     </>
   );
 }
