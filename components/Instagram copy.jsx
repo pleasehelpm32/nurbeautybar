@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   Carousel,
   CarouselContent,
@@ -26,8 +27,16 @@ const Instagram = () => {
     const fetchPosts = async () => {
       try {
         const url = `https://graph.instagram.com/me/media?limit=54&fields=id,media_type,media_url,permalink,thumbnail_url&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN}`;
+
+        console.log("Fetching Instagram posts...");
         const response = await fetch(url);
         const data = await response.json();
+        console.log("Instagram Media Response:", data);
+
+        if (data.error) {
+          throw new Error(data.error.message);
+        }
+
         setPosts(data.data || []);
       } catch (err) {
         console.error("Error fetching Instagram posts:", err);
@@ -49,21 +58,24 @@ const Instagram = () => {
     }, [])
     .slice(0, 6); // Limit to 6 slides
 
-  if (loading) return <div className="text-center text-dark">Loading...</div>;
+  if (loading)
+    return (
+      <div className="text-center text-dark">Loading Instagram feed...</div>
+    );
   if (error) return <div className="text-center text-dark">Error: {error}</div>;
   if (!posts.length)
     return <div className="text-center text-dark">No posts found</div>;
 
   return (
-    <section className="py-24 bg-creamy">
+    <section className="py-12 bg-creamy">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-dark mb-2">Let's Connect</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold text-dark mb-2">Let's Connect</h2>
           <a
             href="https://www.instagram.com/nurbeautybar"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl text-mid hover:text-dark transition-colors duration-300"
+            className="text-xl text-mid hover:text-dark transition-colors duration-300"
           >
             @nurbeautybar
           </a>
@@ -77,7 +89,7 @@ const Instagram = () => {
             align: "start",
           }}
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent>
             {groupedPosts.map((slideGroup, slideIndex) => (
               <CarouselItem key={slideIndex}>
                 <div className="grid grid-cols-3 gap-4">
@@ -102,9 +114,7 @@ const Instagram = () => {
                         />
                         {post.media_type === "VIDEO" && (
                           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-                            <span className="text-white bg-mid px-4 py-2 rounded-full">
-                              ▶️ Play
-                            </span>
+                            <span className="text-white">▶️</span>
                           </div>
                         )}
                       </div>
