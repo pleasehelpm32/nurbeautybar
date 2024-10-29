@@ -170,7 +170,7 @@ const services = [
     id: 11,
     category: "lifts",
     title: "Lash Lift",
-    price: 70,
+    price: 80,
     duration: "1 hour 30 min",
     description:
       "Elevate your eyes with our gentle lash lift, giving you a natural curl that lasts 6-8 weeks. It’s a simple way to uplift your look, damage-free.",
@@ -180,7 +180,7 @@ const services = [
     id: 12,
     category: "lifts",
     title: "Lash Lift with Tint",
-    price: 75,
+    price: 85,
     duration: "1 hours 30 min",
     description:
       "Opt for a tint with your lash lift to enhance the natural beauty of your lashes with added depth and color. This dual treatment elevates and defines, giving you a striking look that lasts 6-8 weeks. Experience the beauty of definition and curl combined, all without the daily effort.",
@@ -195,7 +195,7 @@ const services = [
     id: 13,
     category: "lifts",
     title: "Lash Lift with Keratin Tint",
-    price: 90,
+    price: 100,
     duration: "2 hours",
     description:
       "Indulge in the ultimate lash transformation with this choice. This premier treatment not only gives your lashes a beautifully natural lift and richer color but also pampers them with a gold-infused serum and keratin conditioning. Your lashes will emerge luxuriously soft and healthy. ",

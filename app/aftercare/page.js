@@ -19,16 +19,16 @@ const AftercarePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-creamy py-24">
+    <div className="min-h-screen bg-creamy py-6">
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h1 className="text-5xl font-bold text-dark mb-4">AFTERCARE</h1>
-          <h2 className="text-3xl font-semibold text-dark mb-8">
+          <h2 className="text-3xl font-semibold text-dark">
             CARING FOR YOUR EYELASH EXTENSIONS
           </h2>
         </motion.div>
