@@ -101,11 +101,7 @@ const Instagram = () => {
                           loading="lazy"
                         />
                         {post.media_type === "VIDEO" && (
-                          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-                            <span className="text-white bg-mid px-4 py-2 rounded-full">
-                              ▶️ Play
-                            </span>
-                          </div>
+                          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30"></div>
                         )}
                       </div>
                     </a>
