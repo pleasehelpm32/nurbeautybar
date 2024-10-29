@@ -22,7 +22,6 @@ module.exports = {
       colors: {
         dark: "#6F4F36",
         olddark: "#AD958D", // old dark
-
         mid: "#CDA596",
         cream: "#E9DACE",
         light: "#F0EDE4",

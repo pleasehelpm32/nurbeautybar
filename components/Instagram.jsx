@@ -63,7 +63,7 @@ const Instagram = () => {
             href="https://www.instagram.com/nurbeautybar"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl text-mid hover:text-dark transition-colors duration-300"
+            className="text-2xl text-dark hover:text-mid transition-colors duration-300"
           >
             @nurbeautybar
           </a>
