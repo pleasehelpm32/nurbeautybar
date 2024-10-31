@@ -177,7 +177,7 @@ export default function ContactPage() {
                       <h3 className="text-lg font-medium text-dark mb-1">
                         Email
                       </h3>
-                      <p className="text-xl text-dark">
+                      <p className="text-lg md:text-xl text-dark break-all">
                         nurbeautybar@gmail.com
                       </p>
                     </div>

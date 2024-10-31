@@ -274,14 +274,31 @@ export default function ServicesPage() {
   const [activeService, setActiveService] = useState(services[0]);
   const handleBookClick = () => {
     event("button_click", {
-      category: "booking",
-      label: "services_book_now",
-      // Track additional context about what the user was viewing
+      // Standard conversion tracking
+      category: "conversion",
+      action: "book_now_click",
+      location: "services_page",
+      button_text: "Book Now",
+      page: "services",
+
+      // Service-specific details
       service_category: activeCategory,
       service_name: activeService.title,
       service_price: activeService.price,
-      value: activeService.price, // Optional: tracking the price as a value
-      custom_parameter: "services_page",
+
+      // For monetary value tracking
+      value: activeService.price,
+      currency: "CAD", // Adding currency for better analytics
+    });
+
+    // Optional: Additional conversion event with service details
+    event("conversion", {
+      type: "book_now",
+      location: "services_page",
+      service_category: activeCategory,
+      service_name: activeService.title,
+      value: activeService.price,
+      currency: "CAD",
     });
 
     router.push("/bookings");

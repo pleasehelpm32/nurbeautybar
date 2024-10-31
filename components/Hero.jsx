@@ -10,11 +10,12 @@ const Hero = () => {
   // Function to handle button click and tracking
   const handleBookClick = () => {
     event("button_click", {
-      category: "booking",
-      label: "hero_book_now",
-      value: 1, // Optional numeric value
-      // You can add more custom parameters as needed
-      custom_parameter: "homepage_hero",
+      // Use consistent naming for better tracking
+      category: "conversion", // Changed from "booking" to track all conversion actions
+      action: "book_now_click", // Added action
+      location: "hero", // More specific than custom_parameter
+      button_text: "Book Now", // Helpful for tracking different CTA texts
+      page: "home", // Track which page the button is on
     });
   };
 
