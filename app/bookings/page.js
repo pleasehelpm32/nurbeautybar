@@ -13,7 +13,7 @@ export default function BookingsPage() {
   useEffect(() => {
     // Add a small delay for the animation to be visible
     const redirectTimer = setTimeout(() => {
-      window.location.href = "https://nurbeautybar.com/bookings/";
+      window.location.href = "https://booking.nurbeautybar.com/";
     }, 1500);
 
     return () => clearTimeout(redirectTimer);
