@@ -301,7 +301,7 @@ export default function ServicesPage() {
       currency: "CAD",
     });
 
-    router.push("/bookings");
+    router.push("https://booking.nurbeautybar.com/");
   };
 
   const handleCategoryChange = (category) => {

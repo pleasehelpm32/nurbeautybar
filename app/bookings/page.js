@@ -28,7 +28,9 @@ export default function BookingsPage() {
         <p className="text-lg text-mid mb-8">
           We're redirecting you to our booking system...
         </p>
-        <LoadingSpinner />
+        <div className="flex justify-center">
+          <LoadingSpinner />
+        </div>
         <p className="text-sm text-dark/60 mt-4">
           If you are not redirected automatically,{" "}
           <a
