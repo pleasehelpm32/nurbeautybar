@@ -273,35 +273,35 @@ export default function ServicesPage() {
   const [activeCategory, setActiveCategory] = useState("extensions");
   const [activeService, setActiveService] = useState(services[0]);
   const handleBookClick = () => {
-    event("button_click", {
-      // Standard conversion tracking
-      category: "conversion",
-      action: "book_now_click",
-      location: "services_page",
-      button_text: "Book Now",
-      page: "services",
+    try {
+      // Attempt to track the event
+      event("button_click", {
+        category: "conversion",
+        action: "book_now_click",
+        location: "services_page",
+        button_text: "Book Now",
+        page: "services",
+        service_category: activeCategory,
+        service_name: activeService.title,
+        service_price: activeService.price,
+        value: activeService.price,
+        currency: "CAD",
+      });
 
-      // Service-specific details
-      service_category: activeCategory,
-      service_name: activeService.title,
-      service_price: activeService.price,
+      event("conversion", {
+        type: "book_now",
+        location: "services_page",
+        service_category: activeCategory,
+        service_name: activeService.title,
+        value: activeService.price,
+        currency: "CAD",
+      });
+    } catch (error) {
+      console.log("Analytics event tracking failed:", error);
+    }
 
-      // For monetary value tracking
-      value: activeService.price,
-      currency: "CAD", // Adding currency for better analytics
-    });
-
-    // Optional: Additional conversion event with service details
-    event("conversion", {
-      type: "book_now",
-      location: "services_page",
-      service_category: activeCategory,
-      service_name: activeService.title,
-      value: activeService.price,
-      currency: "CAD",
-    });
-
-    window.location.href = "https://booking.nurbeautybar.com";
+    // Ensure the redirect happens regardless of analytics
+    window.location.href = "https://booking.nurbeautybar.com/";
   };
 
   const handleCategoryChange = (category) => {
